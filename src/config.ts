@@ -54,18 +54,6 @@ export const navBarConfig: NavBarConfig = {
       external: false,
     },
     LinkPreset.About,
-    {
-      name: "其他",
-      url: "#",
-      external: false,
-      children: [
-        {
-          name: "常用脚本&资源",
-          url: "/scripts/",
-          external: false,
-        },
-      ],
-    },
   ],
 };
 
@@ -91,11 +79,11 @@ export const profileConfig: ProfileConfig = {
       icon: "fa6-brands:github",
       url: "https://github.com/suichyan",
     },
-    // {
-    // 	name: "Mail",
-    // 	icon: "fa6-solid:envelope",
-    // 	url: "mailto:i@hiwer.cn",
-    // },
+    {
+    	name: "Mail",
+    	icon: "fa6-solid:envelope",
+    	url: "mailto:anxiao133@gmail.com",
+    },
   ],
 };
 
