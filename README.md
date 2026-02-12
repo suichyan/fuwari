@@ -1,43 +1,3 @@
-# 🍥 Fuwari 二开版
-
-![Node.js >= 20](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen) 
-![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue) 
-
-这是一个基于 [Fuwari](https://github.com/saicaca/fuwari) 的二次开发版本，在原有功能基础上新增了许多功能，更适合中国宝宝体质~
-
-## ✨ 关于 Fuwari
-
-Fuwari 是一个基于 Astro 构建的现代化静态博客主题，具有以下特点：
-
-- 🚀 基于 Astro 4.0 构建，性能卓越
-- 🎨 现代化设计，支持明暗主题切换
-- 📱 完全响应式设计，移动端友好
-- 🔍 内置搜索功能
-- 📝 支持 Markdown 和 MDX
-- 🏷️ 标签和分类系统
-- 💬 评论系统集成
-
-## 🌟 二开新增特性
-
-在原版 Fuwari 基础上，本版本新增了以下功能：
-
-- ✅ **GitHub Actions 自动构建** - 推送代码后自动构建静态网站
-- ✅ **外部服务器自动部署** - 使用脚本自动下载构建产物并部署到服务器
-- ✅ **自定义页面创建** - 新增 new-page 命令，快速创建自定义页面
-- ✅ **友链配置系统** - 通过 `friends_data.ts` 轻松管理友情链接
-- ✅ **全局头部配置** - 通过 `head_data.ts` 统一管理统计代码和SEO标签
-- ✅ **Giscus评论组件** - 通过 `GiscusComments.astro` 提供现代化评论系统
-- ✅ **文章置顶功能** - 支持文章置顶显示，重要内容优先展示
-- ✅ **优雅的文章排序** - 支持精确时间戳排序，确保文章按发布时间准确排列
-- ✅ **导航菜单增强** - 支持二级菜单配置，桌面端悬停展开，移动端点击切换
-
-## 🎯 项目特色
-
-- **零配置部署** - 一次配置，终身使用
-- **快速发布** - 从写作到上线只需一次 git push
-- **稳定可靠** - 基于成熟的 Astro 框架和 GitHub Actions
-- **易于维护** - 清晰的项目结构和完善的文档
-
 ## 🚀 快速开始
 
 ### 环境要求
@@ -174,11 +134,6 @@ export const navBarConfig: NavBarConfig = {
           url: '/scripts/',
           external: false
         },
-        {
-          name: '用药感受',
-          url: '/sleep/',
-          external: false
-        },
       ]
     }
   ]
@@ -207,13 +162,6 @@ export const navBarConfig: NavBarConfig = {
 | `pnpm new-post <filename>` | 创建新文章   |
 | `pnpm new-page <filename>` | 创建自定义页面 |
 
-## 🙏 致谢
-
-感谢 [Fuwari](https://github.com/saicaca/fuwari) 原作者提供的优秀基础框架。
-
----
-
-**基于 Fuwari 二开，让博客发布更简单！** 🚀
 
 
 
