@@ -67,6 +67,8 @@
 	"devDependencies": {
 		"@astrojs/ts-plugin": "^1.10.6",
 		"@biomejs/biome": "2.4.4",
+		"@iconify-json/fa7-brands": "^1.2.2",
+		"@iconify-json/fa7-solid": "^1.2.4",
 		"@rollup/plugin-yaml": "^4.1.2",
 		"@types/hast": "^3.0.4",
 		"@types/markdown-it": "^14.1.2",
