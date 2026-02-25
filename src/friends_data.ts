@@ -20,6 +20,12 @@ export const friends: Friend[] = [
     url: "https://sakuya.moe/",
     avatar: "https://bu.dusays.com/2024/10/23/671837f2232c2.png",
     description: "这里有笨比，大聪明以及sakuya~！",
+  },
+  {
+    name: "冰华的下午茶室",
+    url: "https://huloud.kesug.com/",
+    avatar: "https://huloud.kesug.com/wp-content/uploads/2026/02/IMG_0896_compressed.jpg",
+    description: "永远保持好奇心~",
   }
 ];
 
