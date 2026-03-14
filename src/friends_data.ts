@@ -29,4 +29,3 @@ export const friends: Friend[] = [
 		description: "永远保持好奇心~",
 	},
 ];
-
