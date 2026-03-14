@@ -3,7 +3,7 @@ title: NixOS安装指南
 published: 2026-02-06T23:33:00
 description: '折腾完arch就想来玩玩nixos，简直是梦中情os'
 image: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*NJ1kWalHS7V0FP_hudH64w.jpeg'
-tags: [NixOS, Linux]
+tags: [NixOS, Linux, 双系统, Btrfs, UEFI, GRUB, 安装指南]
 category: 'Linux相关'
 draft: false
 pinned: false

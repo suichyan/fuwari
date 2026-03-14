@@ -3,7 +3,7 @@ title: 使用Cloudflare origin rule重写端口
 published: 2026-02-22T20:33:00
 description: "在服务器使用caddy反代高位端口没法使用cf代理，使用回源规则来重写端口"
 image: ""
-tags: [web]
+tags: [Cloudflare, 回源规则, 端口重写, 反向代理, 源站防护]
 category: "网站相关"
 draft: false
 pinned: false
