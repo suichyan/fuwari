@@ -25,7 +25,7 @@ export const friends: Friend[] = [
 		name: "冰华的下午茶室",
 		url: "https://blog.huloud.top/",
 		avatar:
-			"https://github.com/Fdsfccffc/Fdsfccffc/blob/main/IMG_1388.JPG?raw=true",
+			"https://raw.githubusercontent.com/Fdsfccffc/Fdsfccffc/main/IMG_1388.JPG",
 		description: "永远保持好奇心~",
 	},
 ];
