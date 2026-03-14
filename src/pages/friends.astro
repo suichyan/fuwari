@@ -17,50 +17,49 @@ import { friends } from "../friends_data";
                     name="material-symbols:diversity-3"
                     class="text-[1.5rem]"
                 />
-                <h1 class="text-2xl font-bold text-black dark:text-white">
-                    友情链接
-                </h1>
             </div>
-            <div class="mb-4">
-                <p class="text-sm text-black/60 dark:text-white/60 text-center">
-                    ✨ 友链无序，情谊有价
-                </p>
-            </div>
-            <br />
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {
-                    friends.map((friend) => (
-                        <a
-                            href={friend.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="friend-card"
-                        >
-                            <div class="flex items-center gap-2">
-                                <img
-                                    src={friend.avatar}
-                                    loading="lazy"
-                                    class="w-5 h-5 rounded"
-                                    alt={friend.name}
-                                />
-                                <div class="font-bold text-black dark:text-white">
-                                    {friend.name}
-                                </div>
-                            </div>
-                            <div class="text-sm text-black/50 dark:text-white/50">
-                                {friend.description}
-                            </div>
-                        </a>
-                    ))
-                }
-            </div>
-
-            <!-- <Markdown class="my-8"> -->
-            <!--     <hr> -->
-            <!-- </Markdown> -->
-            <!-- 评论区 -->
-            <!-- <GiscusComments /> -->
+            <h1 class="text-2xl font-bold text-black dark:text-white">
+                友情链接
+            </h1>
         </div>
+
+        <p class="text-sm text-black/60 dark:text-white/60 mb-6">
+            ✨ 友链无序，情谊有价
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {
+                friends.map((friend) => (
+                    <a
+                        href={friend.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="friend-card"
+                    >
+                        <div class="flex items-center gap-2">
+                            <img
+                                src={friend.avatar}
+                                loading="lazy"
+                                class="w-5 h-5 rounded"
+                                alt={friend.name}
+                            />
+                            <div class="font-bold text-black dark:text-white">
+                                {friend.name}
+                            </div>
+                        </div>
+                        <div class="text-sm text-black/50 dark:text-white/50">
+                            {friend.description}
+                        </div>
+                    </a>
+                ))
+            }
+        </div>
+
+        <!-- <Markdown class="my-8"> -->
+        <!--     <hr> -->
+        <!-- </Markdown> -->
+        <!-- 评论区 -->
+        <!-- <GiscusComments /> -->
 
         <style>
             .friend-card {
@@ -102,5 +101,5 @@ import { friends } from "../friends_data";
                 border-color: rgba(75, 85, 99, 0.35);
             }
         </style>
-    </div></MainGridLayout
->
+    </div>
+</MainGridLayout>
