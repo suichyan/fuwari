@@ -1,17 +1,25 @@
 {
-  "main": "dist/_worker.js/index.js",
-  "name": "fuwari",
-  "compatibility_date": "2025-09-27",
-  "compatibility_flags": [
-    "global_fetch_strictly_public",
-    "nodejs_compat"
-  ],
-  "assets": {
-    "binding": "ASSETS",
-    "directory": "dist"
-  },
-  "observability": {
-    "enabled": true
-  },
-  "$schema": "node_modules/wrangler/config-schema.json"
+	"main": "dist/_worker.js/index.js",
+	"name": "fuwari",
+	"compatibility_date": "2025-09-27",
+	"compatibility_flags": ["global_fetch_strictly_public", "nodejs_compat"],
+	"assets": {
+		"binding": "ASSETS",
+		"directory": "dist"
+	},
+	// Required by @astrojs/cloudflare sessions.
+	// Create KV namespace first, then replace ids below:
+	// pnpm wrangler kv namespace create SESSION
+	// pnpm wrangler kv namespace create SESSION --preview
+	"kv_namespaces": [
+		{
+			"binding": "SESSION",
+			"id": "f82ae0ad2485458bb7657b8fcdf511f4",
+			"preview_id": "b8d69d2e7e3e4d7ebcc7f3a15903395f"
+		}
+	],
+	"observability": {
+		"enabled": true
+	},
+	"$schema": "node_modules/wrangler/config-schema.json"
 }
