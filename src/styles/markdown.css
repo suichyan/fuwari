@@ -111,6 +111,71 @@
 
     }
 
+    table {
+        width: fit-content;
+        max-width: 100%;
+        margin: 1rem auto;
+        border-collapse: separate;
+        border-spacing: 0;
+        table-layout: auto;
+        overflow: hidden;
+        border: 1px solid var(--line-divider);
+        border-radius: 0.9rem;
+        background: transparent;
+    }
+
+    thead {
+        th {
+            font-weight: 700;
+            letter-spacing: 0.005em;
+            border-bottom: 1.5px solid var(--line-divider);
+            color: inherit;
+            background: transparent;
+        }
+    }
+
+    th, td {
+        padding: 0.58rem 0.85rem;
+        vertical-align: middle;
+        border-bottom: 1px solid var(--line-divider);
+    }
+
+    th + th, td + td {
+        border-left: 1px solid var(--line-divider);
+    }
+
+    th[align="left"], td[align="left"] {
+        text-align: left;
+    }
+
+    th[align="center"], td[align="center"] {
+        text-align: center;
+    }
+
+    th[align="right"], td[align="right"] {
+        text-align: right;
+    }
+
+    tbody {
+        tr {
+            transition: background-color 180ms ease;
+
+            &:nth-child(even) {
+                background: color-mix(in oklab, var(--btn-plain-bg-hover) 30%, transparent);
+            }
+
+            &:hover {
+                background: color-mix(in oklab, var(--btn-plain-bg-hover) 58%, transparent);
+            }
+        }
+
+        tr:last-child {
+            td {
+                border-bottom: 0;
+            }
+        }
+    }
+
     .katex-display-container {
         max-width: 100%;
         overflow-x: auto;
