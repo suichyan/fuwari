@@ -15,11 +15,13 @@ lang: ''
 
 ### 调整时间设置
 
-> Linux把主板时间改成标准UTC时间，然后根据系统设置的时区对UTC时间进行加减后显示出来。Windows直接读取主板时间显示出来，所以此时你Windows显示的时间就变成了UTC时间，表面上看就像是windows时间错乱了。
+:::note[关于时间错乱]
+Linux把主板时间改成标准UTC时间，然后根据系统设置的时区对UTC时间进行加减后显示出来。Windows直接读取主板时间显示出来，所以此时你Windows显示的时间就变成了UTC时间，表面上看就像是windows时间错乱了。
+:::
 
 PowerShell **管理员**权限运行：
 
-```sh
+```powershell title="PowerShell (管理员)"
 Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
 ```
 
@@ -59,7 +61,7 @@ sudo wpa_cli  # 进入 wpa 命令行交互模式
 
 接着进入交互模式：
 
-```sh
+```sh title="wpa_cli"
 > add_network
 0
 > set_network 0 ssid "你家 WIFI 的 SSID"
@@ -89,9 +91,13 @@ ping 119.29.29.29 -c 4  # 腾讯 DNSPod，不通请检查网络连接
 
 ### 更换频道
 
->由于flake使用git仓库url作为inputs，无法使用channel镜像，所以在国内环境安装时先不使用flake，以免代理麻烦。
+:::note[关于 Flake 与国内网络]
+由于 Flake 使用 Git 仓库 URL 作为 inputs，较难直接使用国内的 Channel 镜像。因此在我们尚未配置好完美的代理环境前，本指南暂时不使用 Flake，以免因为网络问题卡在半路。
+:::
 
-> ⚠️**警告：** 在订阅系统版本时请指定系统版本，一般指定当前的最新稳定版。
+:::warning[警告]
+在订阅系统版本时请指定系统版本，一般指定当前的最新稳定版。
+:::
 
 ```sh
 nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixos-25.11 nixos
@@ -135,7 +141,9 @@ mkfs.btrfs /dev/nvme0n1p2（根分区名）
 
 #### 创建btrfs子卷
 
-**子卷**是btrfs的一个特性，跟快照有关。通常至少要创建root子卷（存放系统文件）和home子卷（存放用户文件），根据命名规范取名为@和@home。由于这两者是平级关系，所以创建@快照时不会包含@home。这样就可以只恢复系统文件，不影响用户数据。
+:::note[什么是 Btrfs 子卷？]
+**子卷**是 Btrfs 的一个重要特性，主要用于快照管理。通常至少要创建 root 子卷（存放系统文件）和 home 子卷（存放用户文件），根据命名规范取名为 `@` 和 `@home`。由于这两者是平级关系，所以创建 `@` 的快照时不会包含 `@home`。这样就可以做到单独恢复系统文件，而不影响用户数据。
+:::
 
 - 挂载
 
@@ -171,7 +179,9 @@ umount /mnt
 mount -o subvol=@root,compress-force=zstd /dev/nvme0n1p2 /mnt
 ```
 
-> 使用 compress-force 而不是 compress，是因为前者会让 Zstd 算法自己判断是否可压缩，这比内核自带的快速启发式检查（compress）压缩率更高。如果您的磁盘空间非常有限，可以指定一个更高的压缩等级，例如 compress-force=zstd:7。Zstd 可选的等级范围是 -15 (快) 到 15 (慢，高压缩率)，默认是 3。
+:::tip[压缩算法选择]
+使用 compress-force 而不是 compress，是因为前者会让 Zstd 算法自己判断是否可压缩，这比内核自带的快速启发式检查（compress）压缩率更高。如果您的磁盘空间非常有限，可以指定一个更高的压缩等级，例如 compress-force=zstd:7。Zstd 可选的等级范围是 -15 (快) 到 15 (慢，高压缩率)，默认是 3。
+:::
 
 2. 挂载home子卷
 
@@ -205,17 +215,22 @@ df -h
 nixos-generate-config --root /mnt
 ```
 
-为添加用户做准备
-```sh
+:::tip[用户密码准备]
+马上我们要编辑系统的核心配置，如果你不想配置好系统启动后无法登录，我们需要提前生成密码哈希值：
+:::
+
+```sh title="生成密码哈希"
 mkpasswd -m sha-512
 ```
+
+> **注意：** 运行后输入你的密码，它会输出一串极其复杂的哈希字符串（例如 `$6$F...`），请把这串字符**复制或拍照记录下来**，下一步编辑配置时会用到！
 
 然后编辑配置：
 ```sh
 nano /mnt/etc/nixos/configuration.nix
 ```
 
-```nix
+```nix title="/etc/nixos/configuration.nix"
 { config, lib, pkgs, ...}:
 {
     imports = [ ./hardware-configuration.nix ];
@@ -291,7 +306,7 @@ blkid
 
 2. 填入各子卷的挂载参数以及uuid修改/boot为/efi
 
-```sh
+```nix title="/etc/nixos/hardware-configuration.nix"
 # 省略其余配置
 fileSystem = {
             "/" = {
@@ -313,9 +328,8 @@ fileSystem = {
                 device = "...";
                 fsType = "vfat";
             };
-        };
-    };
 # 省略其余配置
+}
 ```
 
 ### 部署系统
