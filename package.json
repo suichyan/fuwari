@@ -41,7 +41,7 @@
 		"astro-expressive-code": "^0.42.0",
 		"astro-icon": "^1.1.5",
 		"hastscript": "^9.0.1",
-		"katex": "^0.16.47",
+		"katex": "^0.17.0",
 		"markdown-it": "^14.1.1",
 		"mdast-util-to-string": "^4.0.0",
 		"node-html-parser": "^7.1.0",
@@ -78,7 +78,7 @@
 		"@types/sanitize-html": "^2.16.1",
 		"postcss-import": "^16.1.1",
 		"postcss-nesting": "^13.0.2",
-		"wrangler": "^4.93.0"
+		"wrangler": "^4.94.0"
 	},
 	"packageManager": "pnpm@9.14.4"
 }
