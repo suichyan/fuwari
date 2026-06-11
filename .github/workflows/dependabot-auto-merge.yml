@@ -17,12 +17,6 @@ jobs:
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: 自动批准 PR
-        run: gh pr review --approve "$PR_URL"
-        env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: 启用 auto-merge
         run: gh pr merge --auto --merge "$PR_URL"
         env:
