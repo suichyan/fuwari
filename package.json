@@ -41,7 +41,7 @@
 		"astro-expressive-code": "^0.44.1",
 		"astro-icon": "^1.1.5",
 		"hastscript": "^9.0.1",
-		"katex": "^0.17.0",
+		"katex": "^0.18.4",
 		"markdown-it": "^14.3.0",
 		"mdast-util-to-string": "^4.0.0",
 		"node-html-parser": "^7.1.0",
@@ -76,9 +76,9 @@
 		"@types/markdown-it": "^14.1.2",
 		"@types/mdast": "^4.0.4",
 		"@types/sanitize-html": "^2.16.1",
-		"postcss-import": "^16.1.1",
+		"postcss-import": "^16.2.0",
 		"postcss-nesting": "^13.0.2",
-		"wrangler": "^4.107.0"
+		"wrangler": "^4.123.0"
 	},
 	"packageManager": "pnpm@9.14.4"
 }
