@@ -39,9 +39,9 @@
 		"@tailwindcss/typography": "^0.5.20",
 		"astro": "5.18.2",
 		"astro-expressive-code": "^0.44.1",
-		"astro-icon": "^1.1.5",
+		"astro-icon": "^1.2.0",
 		"hastscript": "^9.0.1",
-		"katex": "^0.17.0",
+		"katex": "^0.18.4",
 		"markdown-it": "^14.3.0",
 		"mdast-util-to-string": "^4.0.0",
 		"node-html-parser": "^7.1.0",
@@ -61,7 +61,7 @@
 		"sanitize-html": "^2.17.6",
 		"sharp": "^0.35.3",
 		"stylus": "^0.64.0",
-		"svelte": "^5.56.8",
+		"svelte": "^5.57.0",
 		"tailwindcss": "^3.4.19",
 		"typescript": "^5.9.3",
 		"unist-util-visit": "^5.1.0"
@@ -76,9 +76,9 @@
 		"@types/markdown-it": "^14.1.2",
 		"@types/mdast": "^4.0.4",
 		"@types/sanitize-html": "^2.16.1",
-		"postcss-import": "^16.1.1",
+		"postcss-import": "^16.2.0",
 		"postcss-nesting": "^13.0.2",
-		"wrangler": "^4.107.0"
+		"wrangler": "^4.127.1"
 	},
 	"packageManager": "pnpm@9.14.4"
 }
